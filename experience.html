@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience</title>
+    <!-- Google Fonts Link for Poppins and Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;  /* Soft light grey background */
+            color: #333; /* Dark text for readability */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Roboto', sans-serif;
+            color: #4A90E2;  /* Lighter blue for headings */
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #4CAF50;  /* Green color for section title */
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #2ECC71;  /* Tomato red color for subtitles */
+        }
+
+        p, li {
+            font-family: 'Poppins', sans-serif;
+            color: #4A90E2; ;  /* Slightly darker color than #333 to stand out on grey background */
+        }
+
+        marquee {
+            font-family: 'Roboto', sans-serif;
+            color: #4CAF50;  /* Green color for marquee */
+            font-size: 24px;
+            font-weight: 700;  /* Bold marquee text */
+        }
+
+        .internship-description {
+            color: #555;  /* Lighter grey text for the description */
+        }
+
+        .image-gallery p {
+            font-family: 'Poppins', sans-serif;
+            color: #4A90E2;   /* Darker grey for image captions */
+            font-size: 14px;
+        }
+
+        /* Adding hover effect for images */
+        .image-container img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);  /* Hover zoom effect */
+        }
+
+        .video-description {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #4A90E2;  /* Lighter blue for video description */
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Experience</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="family.html">Family</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="internship">
+    <marquee><h2>Internship in Kuala Lumpur</h2></marquee>
+    <div class="internship-content">
+        <div class="internship-image">
+            <img id="internImage" src="intern pic .jpg" alt="Kuala Lumpur Internship" style="width:270px;height:350px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0, 255, 255, 0.2); cursor: pointer;">
+        </div>
+        <div class="internship-description">
+            <p><strong>Position:</strong> Intern at World Trade Center Kuala Lumpur.</p>
+            <p><strong>Location:</strong> Kuala Lumpur, Malaysia</p>
+            <p><strong>Duration:</strong> 22 July 2024 - 13 September 2024</p>
+            <p>I had the incredible opportunity to work as an intern in Kuala Lumpur, where I gained hands-on experience in the tech industry. I worked closely with the development team, participated in the coding of various web projects, and assisted in testing and troubleshooting software applications. It was an enriching experience that allowed me to improve my technical skills and collaborate with an amazing team.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Modal for Zoom Effect -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <div id="caption"></div>
+</div>
+
+<style>
+    /* Modal styles */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1000;
+        padding-top: 60px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        border-radius: 10px;
+    }
+
+    .modal-content:hover {
+        transform: scale(1.05);
+        transition: 0.3s ease-in-out;
+    }
+
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #fff;
+        font-size: 30px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 50px;
+    }
+</style>
+
+<script>
+    // Get the modal
+    const modal = document.getElementById("imageModal");
+    const img = document.getElementById("internImage");
+    const modalImg = document.getElementById("modalImg");
+    const captionText = document.getElementById("caption");
+    const closeBtn = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the image, open the modal
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    };
+
+    // When the user clicks on (x), close the modal
+    closeBtn.onclick = function () {
+        modal.style.display = "none";
+    };
+
+    // Close the modal if user clicks outside the image
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
+
+
+        <!-- Additional Images Gallery -->
+        <div class="image-gallery">
+            <h3>Photos from My Internship</h3>
+            <div class="gallery-images" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                <div class="image-container" style="text-align: center;">
+                    <img src="wtc pic .jpg" alt="Internship Image 1" style="width:200px;height:200px;">
+                    <p>At the World Trade Center office</p>
+                </div>
+                <div class="image-container" style="text-align: center;">
+                    <img src="setup pic .jpg" alt="Internship Image 2" style="width:200px;height:200px;">
+                    <p>Setting up the internet room</p>
+                </div>
+                <div class="image-container" style="text-align: center;">
+                    <img src="it staff.jpg" alt="Internship Image 3" style="width:200px;height:200px;">
+                    <p>With the IT staff team</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Local MP4 Video with Description -->
+        <div class="internship-video">
+            <h3>Internship Experience Video</h3>
+            <p class="video-description">"Niki was my desk mate during the internship. We both share a quiet, introverted nature, so we often stuck together and explored places in our own way."</p>
+            <div class="video-container">
+                <video width="560" height="315" controls>
+                    <source src="intern video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; NAZMI | All rights reserved</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Education</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="family.html">Family</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+ <section>
+    <h2 style="color:#D3D3D3">This is me throughout my schooling journey 😎</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Institution</th>
+                <th>Year</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sekolah Rendah Saujana Impian SBT</td>
+                <td>2011-2016</td>
+                <td class="image-cell">
+                    <img src="sekolah rendah.jpg" alt="Sekolah Rendah Image" class="table-img" onclick="openModal('sekolah rendah.jpg')">
+                </td>
+            </tr>
+            <tr>
+                <td>Sekolah Menengah Kebangsaan Sultan Aziz Shah</td>
+                <td>2017-2021</td>
+                <td class="image-cell">
+                    <img src="highschool.jpg" alt="High School Image" class="table-img" onclick="openModal('highschool.jpg')">
+                </td>
+            </tr>
+            <tr>
+                <td>UiTM Segamat</td>
+                <td>2022-2025</td>
+                <td class="image-cell">
+                    <img src="uni pami .jpg" alt="UiTM Image" class="table-img" onclick="openModal('uni pami .jpg')">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Modal Section -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">×</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+<!-- Link to Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+    /* General Font Settings */
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        background-color: #f8f9fa;
+        color: #333;
+    }
+
+    h2 {
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2c3e50;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Table Styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        background: #ffffff;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    th, td {
+        padding: 16px;
+        text-align: left;
+        border: 2px solid #dcdde1;
+        position: relative;
+    }
+
+    th {
+        background: linear-gradient(45deg, #34495e, #1abc9c);
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    td {
+        background-color: #ffffff;
+        color: #333;
+    }
+
+    /* Row Hover Effect */
+    tr:hover {
+        background-color: #f2f6f8;
+        transform: scale(1.01);
+        transition: all 0.3s ease;
+    }
+
+    /* Column Hover Effect */
+    table td:hover,
+    table th:hover {
+        background-color: #eaf7fc;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
+        color: #007acc;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    /* Highlight all cells in the column on hover */
+    table td:hover::before,
+    table th:hover::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -5000px; /* Extend highlight */
+        right: -5000px;
+        background: rgba(0, 122, 204, 0.1);
+        z-index: -1; /* Send to background */
+    }
+
+    /* Image Styles */
+    .image-cell {
+        text-align: center;
+    }
+
+    .table-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .table-img:hover {
+        transform: scale(1.2);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 80%;
+        max-height: 80%;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #f44336;
+    }
+</style>
+<script>
+    // Open the modal
+    function openModal(imageSrc) {
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+
+        modal.style.display = "flex"; // Display the modal as a flexbox for centering
+        modalImage.src = imageSrc;
+    }
+
+    // Close the modal
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+</script>
+
+
+    <footer>
+        <p>&copy; NAZMI | All rights reserved</p>
+    </footer>
+</body>
+</html>

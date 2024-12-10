@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="family.html">Family</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<section>
+    <h2>Every picture holds a piece of my soul.</h2>
+    <div class="gallery">
+        <!-- Image 1 -->
+        <div class="gallery-item effect-1" onclick="openModal('villa bali.jpg', 'One of my stays in Bali.')">
+            <img src="villa bali.jpg" alt="Gallery Image 1">
+            <p>One of my stays in Bali.</p>
+        </div>
+       <!-- Image 2 -->
+		<div class="gallery-item effect-2" onclick="openModal('Bali sunset.jpg', 'Sunset view on the beach.')">
+		<img src="Bali sunset.jpg" alt="Gallery Image 2">
+		<p>Sunset view on the beach.</p>
+		</div>
+        <!-- Image 3 -->
+        <div class="gallery-item effect-3" onclick="openModal('kecak.jpg', 'Kecak Dance performance.')">
+            <img src="kecak.jpg" alt="Gallery Image 3">
+            <p>Kecak Dance performance.</p>
+        </div>
+        <!-- Image 4 -->
+<div class="gallery-item effect-4" onclick="openModal('Bangkok beach.jpg', 'Beach view in Bangkok.')">
+    <img src="Bangkok beach.jpg" alt="Gallery Image 4">
+    <p>Beach view in Bangkok.</p>
+</div>
+        <!-- Image 5 -->
+        <div class="gallery-item effect-5" onclick="openModal('sky view .jpg', 'Starry nights and city lights.')">
+            <img src="sky view .jpg" alt="Gallery Image 5">
+            <p>Starry nights and city lights.</p>
+        </div>
+        <!-- Image 6 -->
+        <div class="gallery-item effect-5" onclick="openModal('disneyland.jpg', 'Disneyland: where dreams come true.')">
+            <img src="disneyland.jpg" alt="Gallery Image 5">
+            <p>Disneyland: where dreams come true.</p>
+        </div>
+		<!-- Image 7 -->
+        <div class="gallery-item effect-5" onclick="openModal('korea.jpg', 'Heungnyemun gate in Korea.')">
+            <img src="korea.jpg" alt="Gallery Image 5">
+            <p>Heungnyemun gate in Korea.</p>
+        </div>
+		<!-- Image 8 -->
+        <div class="gallery-item effect-5" onclick="openModal('food japan.jpg', 'Cant get any fresher food than this, only in Japan :p.')">
+            <img src="food japan.jpg" alt="Gallery Image 5">
+            <p>Cant get any fresher food than this, only in Japan :p</p>
+        </div>
+		<!-- Image 9 -->
+        <div class="gallery-item effect-5" onclick="openModal('beijing.jpg', 'Lama Temple in Beijing, China.')">
+            <img src="beijing.jpg" alt="Gallery Image 5">
+            <p>Lama Temple in Beijing, China.</p>
+        </div>
+		<!-- Image 10 -->
+        <div class="gallery-item effect-5" onclick="openModal('fire dance.jpg', 'Fire dance in Phuket.')">
+            <img src="fire dance.jpg" alt="Gallery Image 5">
+            <p>Fire dance in Phuket.</p>
+        </div>
+		<!-- Image 11 -->
+        <div class="gallery-item effect-5" onclick="openModal('melaka.jpg', 'Last minute plan trip to Malacca.')">
+            <img src="melaka.jpg" alt="Gallery Image 5">
+            <p>Last minute plan trip to Malacca.</p>
+        </div>
+		<!-- Image 12 -->
+<div class="gallery-item effect-5" onclick="openModal('friend.jpg', 'Families aren\'t always blood-related.')">
+    <img src="friend.jpg" alt="Gallery Image 5">
+    <p>Families aren't always blood-related.</p>
+</div>
+		<!-- Image 13 -->
+        <div class="gallery-item effect-5" onclick="openModal('cat.jpg', 'My handsome boy BamBam.')">
+            <img src="cat.jpg" alt="Gallery Image 5">
+            <p>My handsome boy BamBam.</p>
+        </div>
+		<!-- Image 14 -->
+        <div class="gallery-item effect-5" onclick="openModal('classmates.jpg', 'Been stuck with them for 5 semesters straight.')">
+            <img src="classmates.jpg" alt="Gallery Image 5">
+            <p>Been stuck with them for 5 semesters straight :D </p>
+        </div>
+		<!-- Image 15 -->
+        <div class="gallery-item effect-5" onclick="openModal('cosplay.jpg', 'Have you ever seen someone would have so many efforts doing presentation than this guy?')">
+            <img src="cosplay.jpg" alt="Gallery Image 5">
+            <p>Have you ever seen someone would have this much efforts doing presentation than this guy?</p>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Gallery container */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Each gallery item */
+.gallery-item {
+    width: calc(20% - 15px);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Images inside gallery items */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Image hover effect */
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Descriptions */
+.gallery-item p {
+    margin: 8px 0 0;
+    font-size: 14px;
+    color: #fff; /* Visible against the dark background */
+    line-height: 1.5;
+}
+</style>
+
+<!-- Modal for Enlarged Images -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="modalCaption"></div>
+</div>
+
+<script>
+    // Open the modal
+    function openModal(imageSrc, captionText) {
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+        const modalCaption = document.getElementById("modalCaption");
+
+        modal.style.display = "block";
+        modalImage.src = imageSrc;
+        modalCaption.textContent = captionText;
+    }
+
+    // Close the modal
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+</script>
+
+<style>
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal content */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Caption inside modal */
+#modalCaption {
+    margin: 15px auto;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #ff6347;
+}
+</style>
+
+
+
+
+    <footer>
+        <p>&copy; 2024 My Biodata | All rights reserved</p>
+    </footer>
+</body>
+</html>

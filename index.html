@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAZMI'S PAGE</title>
+    <link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>NAZMI'S PAGE</h1>
+        <p>To learn more about me, click the icon above!
+		</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="family.html">Family</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+<!-- Clock Section -->
+<section class="clock-section">
+    <h2 style="color: #F0F8FF; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">Current Time</h2>
+    <div id="clock"></div>
+</section>
+
+<style>
+    .clock-section {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    #clock {
+        font-family: 'Poppins', sans-serif;
+        font-size: 48px; /* Large font size for visibility */
+        font-weight: 600;
+        color: #F0F8FF; /* Light color for contrast with dark background */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add shadow for better readability */
+        margin-top: 10px;
+    }
+</style>
+
+<script>
+    // Function to update the clock
+    function updateClock() {
+        const clock = document.getElementById("clock");
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        clock.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    // Initialize clock and set interval
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+
+
+<s
+
+ 
+   <main>
+    <!-- Biodata Section -->
+    <section class="biodata">
+        <div class="photo" style="position: relative; text-align: center;">
+            <img src="bio pic.jpg" alt="Photo of Wan Nazmi Muqri" style="width:270px;height:350px; z-index: 1; position: relative;">
+            
+            <!-- Decorations -->
+            <div class="decorations">
+                <span class="left-decoration">✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:*</span>
+                <span class="right-decoration">✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:* ✧･ﾟ:*</span>
+            </div>
+        </div>
+        <div class="details">
+            <h2>WAN NAZMI MUQRI</h2>
+            <p><strong>Date of Birth:</strong> OCTOBER 4, 2004</p>
+            <p><strong>Age:</strong> 20 years old</p>
+            <p><strong>Place of Birth:</strong> Selangor, Malaysia</p>
+			
+
+<section class="hobbies">
+    <h2>My Hobbies</h2>
+    <div class="hobbies-list">
+        <div class="hobby-card">
+            <h3>
+                <img src="reading.png" alt="Reading Icon" class="hobby-icon">
+                Reading
+            </h3>
+            <p>Exploring different genres, especially science fiction and horror novels.</p>
+        </div>
+        <div class="hobby-card">
+            <h3>
+                <img src="gaming.png" alt="Gaming Icon" class="hobby-icon">
+                Gaming
+            </h3>
+            <p>Enjoy playing strategy games in my free time.</p>
+        </div>
+        <div class="hobby-card">
+            <h3>
+                <img src="travelling.png" alt="Traveling Icon" class="hobby-icon">
+                Traveling
+            </h3>
+            <p>Discovering new cultures and places whenever possible.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Favorite Song Section -->
+<section class="favorite-song">
+    <h2>My Favorite Song</h2>
+    <div class="song-player">
+        <audio controls autoplay loop>
+            <source src="Break from Toronto.mp3" type="audio/mpeg">
+        </audio>
+        <p><strong>Currently Playing:</strong> *Break from Toronto* by *PartyNextDoor*</p>
+    </div>
+</section>
+
+	<a href="https://www.instagram.com/nzminsim/profilecard/?igsh=MnRxeWkxNnpsNjIy" target="_blank"> <img src="instagram.png" style ="width:45px;height:45px;"></a>
+	<a href="https://twitter.com/wnzmqri" target="_blank"> <img src="twitter.png" style ="width:45px;height:45px;"></a>
+	<a href="https://open.spotify.com/user/lprlwjb7tuelemdqcmcs75ohl?si=MUm6N6tCR-CCngLP-YWZMA" target="_blank"> <img src="spotify.png" style ="width:45px;height:45px;"></a>
+
+<style>
+    .decorations {
+        font-size: 24px; /* Increased font size for larger appearance */
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        color: #4A90E2;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        z-index: 0;
+    }
+
+    .left-decoration,
+    .right-decoration {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        white-space: nowrap;
+        animation: pulseGlow 3s infinite alternate;
+    }
+
+    .left-decoration {
+        left: -80px; /* Extended the distance from the image */
+        text-shadow: 0 0 10px #4A90E2, 0 0 20px #4A90E2, 0 0 30px #4A90E2;
+        animation-delay: 0.3s;
+    }
+
+    .right-decoration {
+        right: -80px; /* Extended the distance from the image */
+        text-shadow: 0 0 10px #FF6347, 0 0 20px #FF6347, 0 0 30px #FF6347;
+        animation-delay: 0.6s;
+    }
+
+    /* Glow Pulse Effect */
+    @keyframes pulseGlow {
+        0% {
+            opacity: 0.8;
+            text-shadow: 0 0 10px #4A90E2, 0 0 20px #4A90E2, 0 0 30px #4A90E2;
+        }
+        100% {
+            opacity: 1;
+            text-shadow: 0 0 20px #FF6347, 0 0 30px #FF6347, 0 0 40px #FF6347;
+        }
+    }
+</style>
+
+<style>
+    /* Prevent text decoration (e.g., underlining) */
+    * {
+        text-decoration: none; /* Remove any underline or line inside the text */
+    }
+</style>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; NAZMI | All rights reserved</p>
+    </footer>
+</body>
+</html>
